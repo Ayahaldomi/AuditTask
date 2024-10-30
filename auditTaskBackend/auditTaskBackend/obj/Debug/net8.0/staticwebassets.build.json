@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "O3kCQ6e3MPc5ZmfBTa2lgrPft2WKPgclZhfEDNBUiSA=",
+  "Source": "auditTaskBackend",
+  "BasePath": "_content/auditTaskBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
