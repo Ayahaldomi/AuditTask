@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Orange\\Desktop\\AuditTask\\AuditTask\\auditTaskBackend\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{7ED465C1-7718-4A85-B2DE-F04564119A30}|auditTaskBackend\\auditTaskBackend.csproj|c:\\users\\orange\\desktop\\audittask\\audittask\\audittaskbackend\\audittaskbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7ED465C1-7718-4A85-B2DE-F04564119A30}|auditTaskBackend\\auditTaskBackend.csproj|solutionrelative:audittaskbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7ED465C1-7718-4A85-B2DE-F04564119A30}|auditTaskBackend\\auditTaskBackend.csproj|c:\\users\\orange\\desktop\\audittask\\audittask\\audittaskbackend\\audittaskbackend\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7ED465C1-7718-4A85-B2DE-F04564119A30}|auditTaskBackend\\auditTaskBackend.csproj|solutionrelative:audittaskbackend\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,37 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\AuditTask\\AuditTask\\auditTaskBackend\\auditTaskBackend\\Program.cs",
-              "RelativeDocumentMoniker": "auditTaskBackend\\Program.cs",
-              "ToolTip": "C:\\Users\\Orange\\Desktop\\AuditTask\\AuditTask\\auditTaskBackend\\auditTaskBackend\\Program.cs",
-              "RelativeToolTip": "auditTaskBackend\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T20:19:11.014Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\AuditTask\\AuditTask\\auditTaskBackend\\auditTaskBackend\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "auditTaskBackend\\Controllers\\EmployeeController.cs",
-              "ToolTip": "C:\\Users\\Orange\\Desktop\\AuditTask\\AuditTask\\auditTaskBackend\\auditTaskBackend\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "auditTaskBackend\\Controllers\\EmployeeController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAYwC0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T20:16:56.002Z",
-              "EditorCaption": ""
             }
           ]
         }

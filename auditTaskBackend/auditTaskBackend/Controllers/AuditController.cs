@@ -18,7 +18,7 @@ namespace auditTaskBackend.Controllers
         [HttpGet("GetAllAudit")]
         public async Task<IActionResult> GetAllAudit()
         {
-            var audits = await _dbContext.Audits.ToListAsync();
+            var audits = await _dbContext.Audits.OrderByDescending(x => x.Id).ToListAsync();
             return Ok(audits);
         }
 

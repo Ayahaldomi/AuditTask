@@ -36,3 +36,12 @@ CREATE TABLE Audit (
     FOREIGN KEY (UserId) REFERENCES Users(Id)
 );
 
+
+INSERT [dbo].[Department] ( [Name]) VALUES ( N'Sales')
+INSERT [dbo].[Department] ( [Name]) VALUES ( N'Markting')
+INSERT [dbo].[Department] ( [Name]) VALUES ( N'Human Resources')
+INSERT [dbo].[Department] ( [Name]) VALUES ( N'Finance')
+
+
+INSERT [dbo].[Users] ( [Name]) VALUES ( N'user1')
+

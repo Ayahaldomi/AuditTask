@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("auditTaskBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e68129521f38aae0341b643631170241a03d2eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+30854df83b1ef0a1721732d28f33f6a7fb4b976f")]
 [assembly: System.Reflection.AssemblyProductAttribute("auditTaskBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("auditTaskBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

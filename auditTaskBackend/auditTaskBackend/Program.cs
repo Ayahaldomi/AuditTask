@@ -21,6 +21,17 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 
 
 });
+builder.Services.AddCors(options =>
+
+options.AddPolicy("Development", builder =>
+{
+    builder.AllowAnyOrigin();
+    builder.AllowAnyMethod();
+    builder.AllowAnyHeader();
+})
+
+
+);
 
 var app = builder.Build();
 
@@ -30,6 +41,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("Development");
 
 app.UseHttpsRedirection();
 

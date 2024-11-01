@@ -19,14 +19,20 @@ namespace auditTaskBackend.Controllers
         [HttpGet("getAllEmployees")]
         public async Task<IActionResult> getAllEmployees()
         {
-            var employees = _dbContext.Employees.Where(e => e.IsDeleted != true).ToList();
+            var employees = _dbContext.Employees.Include(x => x.Department).Where(e => e.IsDeleted != true).ToList();
             return Ok(employees);
         }
 
         [HttpGet("getEmployeeById/{id}")]
         public async Task<IActionResult> getEmployeeById(int id)
         {
-            var employee = _dbContext.Employees.Find(id);
+            var userIdHeader = Request.Headers["User-Id"].FirstOrDefault();
+            if (string.IsNullOrEmpty(userIdHeader) || !int.TryParse(userIdHeader, out var userId))
+            {
+                return BadRequest("User ID is required");
+            }
+            var employee = await _dbContext.Employees.Include(x => x.Department).FirstOrDefaultAsync(e => e.Id == id);
+
             if (employee == null)
             {
                 return BadRequest();
@@ -36,7 +42,7 @@ namespace auditTaskBackend.Controllers
                 Action = "Read",
                 EmployeeName = employee.Name,
                 EmployeeId = employee.Id,
-                UserId = 1,
+                UserId = Convert.ToInt32(userIdHeader),
                 Timestamp = DateTime.Now
 
             };
@@ -48,6 +54,11 @@ namespace auditTaskBackend.Controllers
         [HttpPost("postEmployees")]
         public async Task<IActionResult> postEmployees([FromForm] EmployeeDTO employee)
         {
+            var userIdHeader = Request.Headers["User-Id"].FirstOrDefault();
+            if (string.IsNullOrEmpty(userIdHeader) || !int.TryParse(userIdHeader, out var userId))
+            {
+                return BadRequest("User ID is required");
+            }
             var addEmployee = new Employee
             {
                 Name = employee.Name,
@@ -62,7 +73,7 @@ namespace auditTaskBackend.Controllers
                 Action = "Create",
                 EmployeeName = employee.Name,
                 EmployeeId = addEmployee.Id,
-                UserId = 1,
+                UserId = Convert.ToInt32(userIdHeader),
                 Timestamp = DateTime.Now
 
             };
@@ -71,9 +82,25 @@ namespace auditTaskBackend.Controllers
             return Ok("Employee has been added successfuly");
         }
 
+        [HttpGet("getEmployeeDetailsById/{id}")]
+        public async Task<IActionResult> GetEmployeeDetailsById(int id)
+        {
+            var employee = await _dbContext.Employees.Include(x => x.Department).FirstOrDefaultAsync(e => e.Id == id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            return Ok(employee); 
+        }
+
         [HttpPut("PutEmployee/{id}")]
         public async Task<IActionResult> PutEmployee(int id, [FromForm] EmployeeDTO employee)
         {
+            var userIdHeader = Request.Headers["User-Id"].FirstOrDefault();
+            if (string.IsNullOrEmpty(userIdHeader) || !int.TryParse(userIdHeader, out var userId))
+            {
+                return BadRequest("User ID is required");
+            }
             var existEmployee = _dbContext.Employees.FirstOrDefault(x => x.Id == id);
             if (existEmployee == null)
             {
@@ -90,7 +117,7 @@ namespace auditTaskBackend.Controllers
                 Action = "Update",
                 EmployeeName = existEmployee.Name,
                 EmployeeId = existEmployee.Id,
-                UserId = 1,
+                UserId = Convert.ToInt32(userIdHeader),
                 Timestamp = DateTime.Now
 
             };
